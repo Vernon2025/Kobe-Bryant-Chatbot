@@ -18,27 +18,27 @@ public class KobeBryant {
             response = "Say something, please.";
         } else if (findKeyword(statement, "no") >= 0) {
             response = "Why so negative?";
-        } else if (findKeyword(statement, "mother") >= 0
-                || findKeyword(statement, "father") >= 0
-                || findKeyword(statement, "sister") >= 0
-                || findKeyword(statement, "brother") >= 0) {
-            response = "Tell me more about your family.";
         } else if (findKeyword(statement, "I want to", 0) >= 0) {
             response = transformIWantToStatement(statement);
         } else if (findKeyword(statement, "I want", 0) >= 0) {
             response = transformIWantStatement(statement);
-        } else if (findKeyword(statement, "your name") >= 0) {
-            response = "My name is Kobe Bryant.";
-        } else if (findKeyword(statement, "famous for") >= 0) {
+        } else if (findKeyword(statement, "famous") >= 0) {
             response = "I am famous for being a professional basketball player.";
-        } else if (findKeyword(statement, "married") >= 0) {
+        } else if (findKeyword(statement, "married") >= 0 || 
+                   findKeyword(statement, "marry") >=0) {
+            
             response = "Yes, I was married to Vanessa Laine Bryant.";
         } else if (findKeyword(statement, "children") >= 0) {
-            response = "I have four daughters: Natalia, Gianna, Bianka, and Capri.";
+            response = "I have four daughters";
+        } else if (findKeyword(statement, "names") >= 0) {
+            response = "Their names are Natalia, Gianna, Bianka, and Capri";
         } else if (findKeyword(statement, "born") >= 0) {
-            response = "I was born on August 23, 1978, in Philadelphia, Pennsylvania, United States.";
+            response = "I was born on August 23, 1978, in Philadelphia, Pennsylvania.";
         } else if (findKeyword(statement, "live") >= 0) {
             response = "I lived in Newport Beach, California, United States.";
+        } else if (findKeyword(statement, "name") >= 0 || 
+                   findKeyword(statement, "are") >= 0) {
+            response = "I am Kobe Bryant.";
         } else {
             response = getRandomResponse();
         }
